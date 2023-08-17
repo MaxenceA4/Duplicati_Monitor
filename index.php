@@ -105,18 +105,28 @@ if (mysqli_num_rows($result) > 0) {
             </form>
         </dialog>';
     echo '<button onclick="d.showModal()" class="bouton"> Show Details</button>';
-    // Nombre de rapports dans les dernières 7 jours sur nombre total de rapports
 
+    // The wheel of cheese of backup last 24 hours
     echo '<div class="big-container">';
     echo '<div class="container">';
     echo '<div class="circular-progress">';
     echo '<span class="progress-value">' . $percentage24h . '%</span>';
     echo '</div>';
-
     echo '<span class ="text">Saves in the last 24 hours.</span>';
+    echo '</div>';
 
+
+    // The wheel of cheese of backup last 7 days
+
+    echo '<div class="container">';
+    echo '<div class="circular-progress 7percent">';
+    echo '<span class="progress-value 7percent">' . $percentage7j . '%</span>';
+    echo '</div>';
+    echo '<span class ="text">Saves in the last 7 days.</span>';
     echo '</div>';
     echo '</div>';
+
+
 
 
 } else {

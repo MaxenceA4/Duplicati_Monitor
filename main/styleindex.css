@@ -92,18 +92,20 @@ dialog {
     justify-content: center;
     background: #fdfdfe;
     display: flex;
-
+    flex-direction: row;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     width: 420px;
+    margin: 5px ;
     padding: 50px 0;
     background: #eaeaea;
     border-radius: 10px;
     align-items: center;
     row-gap: 30px;
+
 }
 
 .circular-progress {
