@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Affichage des rapports de sauvegarde</title>
+    <title>Duplicati Monitor</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main/styleindex.css">
 </head>
 <body>
-<h1>Rapports de sauvegarde</h1>
+<h1>Backup report</h1>
 
 <?php
 global $connection;
@@ -15,9 +15,10 @@ include 'LoginConnection/connection.php';
 $query = "SELECT * FROM backup_reports";
 $result = mysqli_query($connection, $query);
 
+
 if (mysqli_num_rows($result) > 0) {
     echo '<table>';
-    echo '<thead><tr></th><th>Date</th><th>Opération</th><th>Résultat</th><th>Détails</th><th>Surnom</th></tr></thead>';
+    echo '<thead><tr></th><th>Date</th><th>Opération</th><th>Résultat</th>><th>Name Of Computer</th></tr></thead>';
     echo '<tbody>';
 
     $complete = 0;
@@ -41,7 +42,6 @@ if (mysqli_num_rows($result) > 0) {
         echo '<td>' . $row['date'] . '</td>';
         echo '<td>' . $row['operation'] . '</td>';
         echo '<td>' . $row['result'] . '</td>';
-        echo '<td>' . $row['details'] . '</td>';
         echo '<td>' . $row['nameOfComputer'] . '</td>';
         echo '</tr>';
     }
