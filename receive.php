@@ -30,6 +30,10 @@ if ($data) {
     // Check if the nameOfComputer is already in the database
     $query = "SELECT * FROM backup_reports WHERE nameOfComputer = '$nameOfComputer'";
     $result = mysqli_query($connection, $query);
+    if ($operationName != 'Backup') {
+        die('Error : Operation name is not "Backup".');
+    }
+
     if (mysqli_num_rows($result) > 0) { // If the nameOfComputer is already in the database, we update the data
         $row = mysqli_fetch_assoc($result);
         $query = "UPDATE backup_reports SET date = NOW(), operation = '$operationName', result = '$parsedResult' WHERE nameOfComputer = '$nameOfComputer'";
@@ -40,11 +44,8 @@ if ($data) {
     mysqli_query($connection, $query);
 
 
-    // Affichage d'une réponse au client (Duplicati)
+    // Send back a response to Duplicati (is this really necessary?)
     echo 'OK';
-} else {
-    // En cas d'échec de la lecture du JSON
-    echo 'Erreur : Impossible de lire le JSON.';
 }
 
 mysqli_close($connection);
