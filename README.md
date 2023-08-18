@@ -1,10 +1,10 @@
 # Duplicati Monitor
 A web application that provides a visual representation of backup reports collected from different computers. It uses PHP to handle and process the reports sent by the Duplicati backup software.
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/MaxenceA4/Duplicati_Monitor/blob/master/LICENSE)
+![MySQL][(https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+![JavaScript][(https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en/docs/Web/JavaScript)
+![PHP][(https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/manual/en/intro-whatis.php)
 
 ## Features
 
