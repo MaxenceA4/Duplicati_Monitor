@@ -1,19 +1,25 @@
-let circularProgress = document.querySelector('.circular-progress'),
-    progressValue = document.querySelector('.progress-value');
+function updateProgress(selector, endValue) {
+    let circularProgress = document.querySelector('.circular-progress' + selector),
+        progressValue = document.querySelector('.progress-value' + selector);
 
-let progressStartValue = 0,
-    progressEndValue7 = Math.floor(percentage7 * 10), // Multipliez par 10 pour travailler avec des dixièmes de pourcent
-    progressEndValue24 = Math.floor(percentage24 * 10), // Multipliez par 10 pour travailler avec des dixièmes de pourcent
-    speed = 5; // Réduisez le temps d'attente entre chaque mise à jour
+    let progressStartValue = 0,
+        speed = 5;
 
-let progress = setInterval(() => {
-    progressStartValue += 1; // Incrémente de 0.1%
+    let progress = setInterval(() => {
+        progressStartValue += 1;
 
-    let displayedProgress = (progressStartValue / 10).toFixed(1); // Convertit le dixième de pourcent en pourcent et arrondit à 1 décimale
-    progressValue.textContent = `${displayedProgress}%`;
-    circularProgress.style.background = `conic-gradient(#006401 ${displayedProgress * 3.6}deg, #7c7272 0deg)`;
+        let displayedProgress = (progressStartValue / 10).toFixed(1);
+        progressValue.textContent = `${displayedProgress}%`;
+        circularProgress.style.background = `conic-gradient(#006401 ${displayedProgress * 3.6}deg, #7c7272 0deg)`;
 
-    if (progressStartValue === progressEndValue24) {
-        clearInterval(progress);
-    }
-}, speed);
+        if (progressStartValue === endValue) {
+            clearInterval(progress);
+        }
+    }, speed);
+}
+
+let progressEndValue24 = Math.floor(percentage24 * 10);
+updateProgress('-24h', progressEndValue24);
+
+let progressEndValue7 = Math.floor(percentage7 * 10);
+updateProgress('-7d', progressEndValue7);
