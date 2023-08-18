@@ -83,8 +83,6 @@ if (mysqli_num_rows($result) > 0) {
     $percentage24h = round(mysqli_num_rows($result24h) / $complete * 100, 2);
     $percentage7j = round(mysqli_num_rows($result7j) / $complete * 100, 2);
 
-    // Nombre de rapports dans les dernières 24 heures sur nombre total de rapports
-
     echo '<dialog id="d">
             <form method="dialog">';
     if (is_array($fautif24) || is_object($fautif24))
@@ -107,24 +105,24 @@ if (mysqli_num_rows($result) > 0) {
     echo '<button onclick="d.showModal()" class="bouton"> Show Details</button>';
 
     // The wheel of cheese of backup last 24 hours
-    echo '<div class="big-container">';
-    echo '<div class="container">';
-    echo '<div class="circular-progress">';
-    echo '<span class="progress-value">' . $percentage24h . '%</span>';
-    echo '</div>';
-    echo '<span class ="text">Saves in the last 24 hours.</span>';
-    echo '</div>';
+    echo '<div class="big-container">
+            <div class="container">
+                <div class="circular-progress circular-progress-24h">
+                    <span class="progress-value progress-value-24h">' . $percentage24h . '%</span> 
+            </div>
+                <span class="text">Saves in the last 24 hours.</span>
+            </div>';
 
 
     // The wheel of cheese of backup last 7 days
 
-    echo '<div class="container">';
-    echo '<div class="circular-progress 7percent">';
-    echo '<span class="progress-value 7percent">' . $percentage7j . '%</span>';
-    echo '</div>';
-    echo '<span class ="text">Saves in the last 7 days.</span>';
-    echo '</div>';
-    echo '</div>';
+    echo '<div class="container">
+            <div class="circular-progress circular-progress-7d">
+                <span class="progress-value progress-value-7d">' . $percentage7j . '%</span>
+        </div>
+            <span class="text">Saves in the last 7 days.</span>
+            </div>
+        </div>';
 
 
 
