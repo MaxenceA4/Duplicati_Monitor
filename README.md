@@ -29,7 +29,8 @@ A web application that provides a visual representation of backup reports collec
 - Clone the Repository:
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screen of website](Screen.png?raw=true)
+![Screen of duplicati settings](image.png?raw=true)
 
 
 ## Authors and License
