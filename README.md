@@ -6,6 +6,18 @@ A web application that provides a visual representation of backup reports collec
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en/docs/Web/JavaScript)
 [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/manual/en/intro-whatis.php)
 
+# Table of Contents
+
+1. [🛡 Duplicati Monitor](#duplicati-monitor)
+2. [✨ Features](#features)
+3. [🛠 Requirements](#requirements)
+4. [📸 Screenshots](#screenshots)
+5. [👥 Authors and License](#authors-and-license)
+6. [🚀 Setup](#setup)
+7. [🤝 Contributing](#contributing)
+8. [📝 Notes](#notes)
+
+   
 ## Features
 
 - Lists all backup reports in a tabulated format.
@@ -60,6 +72,37 @@ A web application that provides a visual representation of backup reports collec
 
 5. **Run the Application:**
    - Open a web browser and navigate to `http://yourserver/path_to_project/index.php` to view the backup reports.
+
+## Contributing
+
+We welcome contributions to the Duplicati Monitor project! Whether you are interested in writing code, reporting bugs, or suggesting new features, your help is highly appreciated. Here's how you can contribute:
+
+1. **Fork the Repository:**
+   - Fork this repository to your own GitHub account and clone it to your local machine.
+
+2. **Create a New Branch:**
+   ```sh
+   git checkout -b name-of-your-new-feature-or-bug-fix
+   ```
+   
+3. **Make Your Changes:**
+   - Make your changes and improvements to the codebase. Ensure that your code is clean and efficient.
+
+4. **Commit and Push Your Changes:**
+   ```sh
+   git commit -m "Describe your changes here"
+   git push origin name-of-your-new-feature-or-bug-fix
+   ```
+   
+5. **Submit a Pull Request:**
+   - Go to the repository on GitHub and create a new pull request for your changes.
+
+6. **Wait for Code Review:**
+   - Wait for your changes to be reviewed. Be responsive to feedback and make necessary changes as needed.
+
+Please ensure that your code follows the existing style and structure of the project to maintain consistency.
+
+### Thank you for helping to make Duplicati Monitor better!
 
 ## Notes
 The wheel of cheese circular progress bars are controlled by the percentage of backups found in the last 24 hours and 7 days. This percentage is calculated based on the total number of backup reports found. <br>
