@@ -83,26 +83,8 @@ if (mysqli_num_rows($result) > 0) {
     $percentage24h = round(mysqli_num_rows($result24h) / $complete * 100, 2);
     $percentage7j = round(mysqli_num_rows($result7j) / $complete * 100, 2);
 
-    echo '<dialog id="d">
-            <form method="dialog">';
-    if (is_array($fautif24) || is_object($fautif24))
-        echo '<p>Those computer did not made backups in the last 24 hours:</p>
-<ul>';
-    foreach ($fautif24 as $value)
-        echo '<li>' . $value . '</li>';
-    echo '</ul>';
-    if (is_array($fautif7) || is_object($fautif7))
-        echo '<p>Those computer did not made backups in the last 7 days:</p>
-<ul>';
-    foreach ($fautif7 as $value)
-        echo '<li>' . $value . '</li>';
-    echo '</ul>';
 
 
-    echo '<button class="bouton"> Close </button>
-            </form>
-        </dialog>';
-    echo '<button onclick="d.showModal()" class="bouton"> Show Details</button>';
 
     // The wheel of cheese of backup last 24 hours
     echo '<div class="big-container">
@@ -111,6 +93,7 @@ if (mysqli_num_rows($result) > 0) {
                     <span class="progress-value progress-value-24h">' . $percentage24h . '%</span> 
             </div>
                 <span class="text">Saves in the last 24 hours.</span>
+                <button onclick="twentyfour.showModal()" class="bouton"> Show Details</button>
             </div>';
 
 
@@ -121,6 +104,7 @@ if (mysqli_num_rows($result) > 0) {
                 <span class="progress-value progress-value-7d">' . $percentage7j . '%</span>
         </div>
             <span class="text">Saves in the last 7 days.</span>
+            <button onclick="seven.showModal()" class="bouton"> Show Details</button>
             </div>
         </div>';
 
@@ -134,6 +118,32 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($connection);
 ?>
 
+
+
+<dialog id="twentyfour">
+    <form method="dialog">
+        <p>Those computer did not made backups in the last 24 hours:</p>
+        <ul>
+            <?php
+            foreach ($fautif24 as $value)
+                echo '<li>' . $value . '</li>';
+            ?>
+        </ul>
+        <button class="bouton"> Close </button>
+    </form>
+</dialog>
+
+<dialog id="seven">
+    <form method="dialog">
+        <p>Those computer did not made backups in the last 7 days:</p>
+        <ul>
+            <?php
+            foreach ($fautif7 as $value)
+                echo '<li>' . $value . '</li>';
+            ?>
+        </ul>
+        <button class="bouton"> Close </button>
+    </form>
 
 <script>
     var percentage24 = <?php echo $percentage24h; ?>;
