@@ -13,6 +13,7 @@ A web application that provides a visual representation of backup reports collec
 - Provides detailed information on computers that did not make backups in a specified time frame, via modal windows.
 
 - Highlights backup reports based on their date:
+  
 | Color             | Meaning                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | Red | backups older than 7 days. |
@@ -53,7 +54,9 @@ A web application that provides a visual representation of backup reports collec
    - Place the entire contents of the `project-repo` directory into the root of your web server or in a subdirectory.
 
 4. **Configure Duplicati:**
-   - For each computer you are monitoring, configure Duplicati to send its backup reports to `http://yourserver/path_to_project/receive.php?nameOfComputer=computer_name`.
+   - For each computer you are monitoring, configure Duplicati to send its backup reports to `http://yourserver/path_to_project/receive.php?nameOfComputer=computer_name`. You can do this by modyfing in Advanced Options the `send-http-url`
+   - Modify the `send-http-result-output-format` to `Json`
+   - Modify the `send-http-message` to `Duplicati Backup Report\n\nOperation: %OPERATIONNAME%\nResult: %PARSEDRESULT%\nDate: %DATE%\nDetails: %DETAILS%`
 
 5. **Run the Application:**
    - Open a web browser and navigate to `http://yourserver/path_to_project/index.php` to view the backup reports.
