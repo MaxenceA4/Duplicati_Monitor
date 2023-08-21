@@ -6,7 +6,7 @@ function updateProgress(selector, endValue) {
         speed = 5;
 
     let progress = setInterval(() => {
-        progressStartValue += 1;
+
 
         let displayedProgress = (progressStartValue / 10).toFixed(1);
         progressValue.textContent = `${displayedProgress}%`;
@@ -15,6 +15,7 @@ function updateProgress(selector, endValue) {
         if (progressStartValue === endValue) {
             clearInterval(progress);
         }
+        progressStartValue += 1;
     }, speed);
 }
 

@@ -119,7 +119,7 @@ mysqli_close($connection);
 ?>
 
 
-
+<!-- The dialog box that appears when you click on the button "Show Details"-->
 <dialog id="twentyfour">
     <form method="dialog">
         <p>Those computer did not made backups in the last 24 hours:</p>
@@ -144,6 +144,8 @@ mysqli_close($connection);
         </ul>
         <button class="bouton"> Close </button>
     </form>
+</dialog>
+
 
 <script>
     var percentage24 = <?php echo $percentage24h; ?>;
