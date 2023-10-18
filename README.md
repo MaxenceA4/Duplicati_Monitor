@@ -59,7 +59,7 @@ A web application that provides a visual representation of backup reports collec
    ```
    
 2. **Database Configuration:**
-   - Create a MySQL database and import the `database_schema.sql` file to set up the necessary tables.
+   - Create a MySQL database and import the `duplicati_monitoring.sql` file to set up the necessary tables.
    - Modify the `LoginConnection/connection.php` file with your database credentials (username, password, database name, etc.).
 
 3. **Place the Files:**
