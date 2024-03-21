@@ -1,5 +1,5 @@
 # Duplicati Monitor
-A web application that provides a visual representation of backup reports collected from different computers. It uses PHP to handle and process the reports sent by the Duplicati backup software.
+A web application that provides a visual representation of backup reports collected from different computers. It uses PHP and a DDB to handle and process the reports sent by the Duplicati backup software.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/MaxenceA4/Duplicati_Monitor/blob/master/LICENSE)
 [![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
@@ -21,17 +21,9 @@ A web application that provides a visual representation of backup reports collec
 ## Features
 
 - Lists all backup reports in a tabulated format.
-- Displays the percentage of backups made in the last 24 hours and 7 days, using a circular progress bar (wheel of cheese).
-- Provides detailed information on computers that did not make backups in a specified time frame, via modal windows.
-
-- Highlights backup reports based on their date:
-  
-| Color             | Meaning                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Red | backups older than 7 days. |
-| Orange | backups made between 24 hours and 7 days ago |
-| Green | backups made in the last 24 hours|
-
+- Displays the percentage of backups made in the last 24 hours and 7 days, using a circular progress bar.
+- Provides detailed information on computers that did not make backups in a specified time frame.
+- Extra tab that give more detailled informations on all the backup.
 
 
 
