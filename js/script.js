@@ -10,7 +10,7 @@ function updateProgress(selector, endValue) {
 
         let displayedProgress = (progressStartValue / 10).toFixed(1);
         progressValue.textContent = `${displayedProgress}%`;
-        circularProgress.style.background = `conic-gradient(#006401 ${displayedProgress * 3.6}deg, #7c7272 0deg)`;
+        circularProgress.style.background = `conic-gradient(#4354A1FF ${displayedProgress * 3.6}deg, #7c7272 0deg)`;
 
         if (progressStartValue === endValue) {
             clearInterval(progress);
