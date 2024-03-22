@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     exit();
 }
 global $connection;
-include_once 'LoginConnection/connection.php';
+include_once '../private_duplicati/LoginConnection/connection.php';
 $query = "SELECT * FROM backup_reports WHERE id = $id";
 $result = mysqli_query($connection, $query);
 $row = mysqli_fetch_assoc($result);

@@ -1,6 +1,6 @@
 <?php
-require_once 'LoginConnection/connection.php';
-
+require_once '../private_duplicati/LoginConnection/connection.php';
+global $connection;
 $query = "SELECT * FROM backup_reports";
 $result = mysqli_query($connection, $query);
 $numberOfBackup = mysqli_num_rows($result);
@@ -14,7 +14,7 @@ $numberOfBackup = mysqli_num_rows($result);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Duplicati Monitor - Backup Reports</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>

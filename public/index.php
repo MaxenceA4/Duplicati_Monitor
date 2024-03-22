@@ -1,6 +1,6 @@
 <?php
 global $connection;
-include 'LoginConnection/connection.php';
+include '../private_duplicati/LoginConnection/connection.php';
 $query = "SELECT * FROM backup_reports";
 $result = mysqli_query($connection, $query);
 
@@ -111,7 +111,7 @@ if (mysqli_num_rows($result) > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duplicati Monitor</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
@@ -238,7 +238,7 @@ if (mysqli_num_rows($result) > 0) {
     var percentage24 = <?php echo $percent24h; ?>;
     var percentage7 = <?php echo $percent7j; ?>;
 </script>
-<script src="public/js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
