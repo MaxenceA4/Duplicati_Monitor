@@ -1,10 +1,16 @@
 <?php
 global $connection;
-include '../private_duplicati/LoginConnection/connection.php';
-$query = "SELECT * FROM backup_reports";
-$result = mysqli_query($connection, $query);
+include 'connection.php';
 
-if (mysqli_num_rows($result) > 0) {
+
+// Format de la date dans la table :
+// 2024-03-21 15:00:00
+// On va faire une query pour chacun des 7 derniers jours et on va compter le nombre de backup pour chaque jour
+// On va ensuite créer un tableau de 7 éléments, un pour chaque jour de la semaine
+
+    $query = "SELECT * FROM backup_reports WHERE DATE(date) BETWEEN DATE_SUB(CURDATE(), INTERVAL 6 DAY) AND CURDATE()";
+    $result = mysqli_query($connection, $query);
+
 // Part for the graph
     $numberOfBackupsPerDay = array_fill(0, 7, 0); // Initialize array with zeros for each day of the week
 
@@ -96,14 +102,6 @@ if (mysqli_num_rows($result) > 0) {
     $computerList7 = array_reduce($computerList7, function ($carry, $item) {
         return $carry . "<li>$item</li>";
     }, '');
-
-
-
-
-} else {
-    echo "No backup reports found.";
-    exit();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
